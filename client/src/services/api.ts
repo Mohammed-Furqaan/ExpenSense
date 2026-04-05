@@ -1,10 +1,8 @@
 import axios from "axios";
 
-// In production: VITE_API_URL = https://your-app.onrender.com
-// In development: proxy via vite handles /api -> localhost:5000
 const baseURL = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
-  : "/api";
+  : "https://expensense-rw4e.onrender.com/api";
 
 const api = axios.create({ baseURL });
 
