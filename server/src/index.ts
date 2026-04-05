@@ -6,7 +6,12 @@ import app from "./app";
 
 const PORT = process.env.PORT || 5000;
 const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://localhost:27017/expensense";
+  process.env.MONGO_URI ||
+  "mongodb+srv://mohammedfurqaan999_db_user:oTt88veeqm4zuWOw@cluster0.jka08ni.mongodb.net/expensense?retryWrites=true&w=majority&appName=Cluster0";
+
+if (!process.env.JWT_SECRET) {
+  process.env.JWT_SECRET = "expensense_jwt_secret_2024";
+}
 
 mongoose
   .connect(MONGO_URI)
